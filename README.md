@@ -5,7 +5,7 @@
 
 ## Wireframe
 
-![](https://drive.google.com/drive/folders/1hcKSsGxI5riq4D2aY-HInUTeXKetuZND?usp=sharing)
+[[Our webapp wireframe](https://drive.google.com/drive/folders/1hcKSsGxI5riq4D2aY-HInUTeXKetuZND?usp=sharing)
 
 
 ## User Stories:
@@ -14,7 +14,7 @@
 
 ## Domain Modeling:
 
-![](https://drive.google.com/file/d/1LGnW6p-QHDwXWs2J9c1bQAHCC3S5nA2q/view?usp=sharing)
+[Our webapp domain modeling](https://drive.google.com/file/d/1LGnW6p-QHDwXWs2J9c1bQAHCC3S5nA2q/view?usp=sharing)
 
 
 ## ERD:
