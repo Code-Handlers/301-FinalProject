@@ -5,7 +5,7 @@
 
 ## Wireframe
 
-[[Our webapp wireframe](https://drive.google.com/drive/folders/1hcKSsGxI5riq4D2aY-HInUTeXKetuZND?usp=sharing)
+[Our webapp wireframe](https://drive.google.com/drive/folders/1hcKSsGxI5riq4D2aY-HInUTeXKetuZND?usp=sharing)
 
 
 ## User Stories:
@@ -19,5 +19,8 @@
 
 ## ERD:
 [Our webapp ERD](https://drive.google.com/file/d/1ZQp2oJt1EIMJQk-zeZGYJpEA4MijxqH-/view?usp=sharing)
+
+
+Also check our web app [requirements](https://github.com/Code-Handlers/gitContent/blob/main/requirements.md)
 
 
