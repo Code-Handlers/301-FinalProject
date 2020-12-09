@@ -25,6 +25,7 @@
                 </video>
             <a href="{{url}}" target="_blank" class="btn">Video Link</a>
               <form action="/addFavorite" method="post">
+                <input type="hidden" name="download_url" value="{{imageURL}}">
                 <input type="hidden" name="url" value="{{url}}">
                 <input type="hidden" name="data_type" value="{{data_type}}">
                 <button type="submit" class="btn">Add to Favorite</button>
