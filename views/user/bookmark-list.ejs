@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    <header class="banner-favorite">
+        <h1>Profile Page</h1>
+        <input class="menu-trigger" type="checkbox" id="menu_trigger" />
+        <div class="overlay" id="fullscreen_nav">
+            <ul class="menu-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/search">Search Item</a></li>
+                <li><a href="/joinus">Join Us</a></li>
+                <li><a href="#foot">Contact Us</a></li>
+            </ul>
+        </div>
+        <label class="hamburger-menu" for="menu_trigger"><span></span><span></span><span></span></label>
+    </header>
+    <div class="logout-container">
+        <h2><i class="fa fa-user fa-sm" aria-hidden="true"></i>Welcome, <%= name %>!</h1>
+        <form action="/logout" method="post">
+            <button type="submit" class="btn">Log out</button>
+        </form>
+    </div>
+
+    <%if (userData.length > 0){%>
+        <div class="main">
+            <%userData.forEach((item, index)=>{%>
+                <%if (item.data_type == 'video') {%>
+                    <div class="video-template">
+                        <video controls>
+                            <source src="<%= item.download_url%>" type="video/mp4">
+                        </video>
+                        <a href="<%= item.page_url %>" target="_blank" class="btn">Video Link</a>
+                        <p><%= item.note %></p>
+                        <div class="loading">
+                            <button type="submit" class="showUpdate btn">Show Update</button>
+                        </div>
+                        <div class="content">
+                            <form action="/myFavorite/<%= item.id %>?_method=put" method="post" class="update">
+                                <span class="close">&times;</span>
+                                <div class="loading">
+                                    <p>Leave your note inside the input text...</p>
+                                </div>
+                                <div class="loading">
+                                    <input type="text" name="note" value="<%= item.note %>">
+                                </div>
+                                <button type="submit" class="btn">Update</button>
+                            </form>
+                        </div>
+                        <button type="submit" class="destroy">Remove</button>
+                        <div class="delete-content">
+                            <div class="delete">
+                                <span class="close-delete">&times;</span>
+                                <div class="loading">
+                                    <p>Would you really like to delete this from your profile?</p>
+                                </div>
+                                <button type="submit" class="btn no">No</button>
+                                <form action="/myFavorite/<%= item.id %>?_method=delete" method="post" class="yes">
+                                    <button type="submit" class="btn">Yes</button>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                <%} else if(item.data_type == 'image'){%>
+                    <div class="photo-template">
+                        <img src="<%= item.download_url %>" alt="">
+                        <a href="<%= item.page_url %>" target="_blank" class="btn">Image Link</a>
+                        <p><%= item.note %></p>
+                        <div class="loading">
+                            <button type="submit" class="showUpdate btn">Show Update</button>
+                        </div>
+                        <div class="content">
+                            <form action="/myFavorite/<%= item.id %>?_method=put" method="post" class="update">
+                                <span class="close">&times;</span>
+                                <div class="loading">
+                                    <p>Leave your note inside the input text...</p>
+                                </div>
+                                <div class="loading">
+                                    <input type="text" name="note" value="<%= item.note %>">
+                                </div>
+                                <button type="submit" class="btn">Update</button>
+                            </form>
+                        </div>
+                        
+                        <button type="submit" class="destroy">Remove</button>
+                        <div class="delete-content">
+                            <div class="delete">
+                                <span class="close-delete">&times;</span>
+                                <div class="loading">
+                                    <p>Would you really like to delete this from your profile?</p>
+                                </div>
+                                <button type="submit" class="btn no">No</button>
+                                <form action="/myFavorite/<%= item.id %>?_method=delete" method="post" class="yes">
+                                    <button type="submit" class="btn">Yes</button>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                <%}%>
+            <%})%>
+        </div>
+    <%}%>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
